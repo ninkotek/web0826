@@ -1,0 +1,17 @@
+React 시작하기
+1. Node.js 설치
+  -> npx(node package eXecute), npm(node package manager) 명령어 입력
+
+  2. Node 설치확인
+  명령줄 인터페이스 Command-Line Interface로 한다
+   가) ctrl+` -> 터미널 창
+   나) 전역 설치(global )  web0826>node -v, 에러가 날 경우는 컴퓨터 재부팅
+
+   리액트 App 제작 방법
+   1. CDM -> 직접 제작
+   2. cra(create-react-app) -> SPA(Single Page Application)제작 방식
+
+    CDM방식 App제작 하기
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script> => 가상 react-DOM사용 가능
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script> => jsx를 컴퓨터가 이해하게 번역
