@@ -97,8 +97,11 @@
        //1.　｛｝안에 문장이 1개임녀 -> {}생략
         //const var2 = (a)=>console.log(a);
         //2. 매개 변수가 1개이면  -> ()생략
+        //return문을 사용하면  return 키워드 생략
         const var2 = a =>{return a;}
-        //const var2 = (a, b) =>console.log(a+b);
+        //const var2 = a =>a;
+        //const var2 = function(a) =>{return a;} //return 하지 않음
+       
         
 
         //정규식(RegExp, Regular Expression)
@@ -110,15 +113,16 @@
         /* ------------------------------------------------------- */
         //함수 호출
         /* ------------------------------------------------------- */
-        document.write(fn(1.1, 5));
-        document.write(var1(2, 5));
+        const x = fn(1.1, 5);
+        const y = var1(2, 5);
 
         //매개 변수 갯수보다 더 많은 인수를 써도 에러는 아니다. 매개 변수 순 개수만큼 기록된 인수가 적용된다. 
-        document.write(var2("3.", 5));
+        const z = var2("3.", 5);
 
-        console.log(var2("3.", 5));
-
+        document.write(`x는 ${x} <br>y는 ${y} <br>z는 ${z}`);
+      
     </script>
+
 </body>
 
 </html>
