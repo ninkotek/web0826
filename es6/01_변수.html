@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       /* 
+        변수 키워드는? var let const
+
+        //변수에는 전역변수와 지역변수가 있다.
+
+        //블록 범위 변수는 let, const
+        //재선언 및 재할당
+        var: 재선언 재할당 가능
+        let: 재선언 재할당 가능, 단 재선언은 범위가 달라야 한다.
+        const: 재선언 재할당 모두 안 됨. 선언즉시 할당. 단, 재선은 범위가 달라야 한다.   
+        //5.6을 x에 할당한다.   
+        
+        
+        */
+       
+        var x = 1; //전역 변수
+       
+
+        fn(); //호이스팅 -> 위에서도 함수 호출 가능: var, 선언적 함수, 익명 함수는 호이스팅 안 됨
+
+        function fn(){
+            var x = 2; //지역 변수
+            
+            console.log("첫 번째 함수:" + x);
+        }
+        function fn(){
+            var x = 3; //지역 변수
+            console.log("두 번째 함수:", x);
+        }
+
+    
+    </script>
+</body>
+</html>

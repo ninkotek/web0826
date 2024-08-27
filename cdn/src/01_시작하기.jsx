@@ -73,3 +73,33 @@ function App(){
 
 // 출력 -> 렌더링
 ReactDOM.render(<App />, document.querySelector("#root"));
+
+
+/* 
+
+function Hello(){
+  return(
+    <>
+      <img src="images/pic01" alt="image1" />
+      <span style={{display: "flex", padding: "0 12px"}}></span>
+    </>
+  
+  );
+}
+
+function App(){
+  <div style={{
+    display: "flex"
+  }}>
+    <Hello />
+    <Hello />
+    <Hello />
+    <Hello />
+  
+  </div>
+
+}
+
+ReactDOM.render(<App />, document.querySelector("#root"));
+
+*/
