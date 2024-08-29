@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this</title>
+</head>
+<body>
+    <button>red</button>
+    <button>green</button>
+    <button>blue</button>
+
+    <script>
+        
+
+        /* 
+        class의 경우 this는 아래와 다르다.
+            속성의 값이 일반함수인 경우
+            -     이벤트 발생시 this는 이벤트를 발생한 객체 자신이다.
+            속성의 값이 화살표 함수인 경우
+            -   this를 가지고 있는 객체 자신이다.
+        
+
+
+        함수와 this
+            함수 호출시: this는 window        
+
+        이벤트 발생시
+        this: 
+            - 일반 함수일 경우 window
+            - 화살표 함수의 경우 이벤트를 발생한 자신
+         event.currentTarget
+            - 일반 함수, 화살표 함수 모두 이벤트를 발생한 자신
+
+        일반함수 vs 화살표 함수
+
+        일반함수는 
+            this, event.currentTarget은 이벤트를 발생한 자신.
+        화살표 함수으 경우 
+            this는 window
+            event.currentTarget은 이벤트를 발생한 자신
+
+        일반함수 vs 생성자함수
+            일반함수 - return, this 선택
+            생성자 함수 - new, this 키워드 필수, return 사용 안함. this가 return대신        
+        
+        */
+
+
+
+
+        const btn = document.querySelectorAll('button');
+        //매개변수가 없을 경우 두 문장은 같은 문장이다
+        //매개변수(인수)가 있을 경우
+        //btn[0].onclick = function (){fn()};
+        //매개변수 없을 경우
+
+        //버튼 클릭하면
+        btn[0].onclick = fn;
+        const text = btn[0].innerText;
+        console.log(text);
+
+        function fn(){
+            const text = btn[0].innerText;
+            document.body.style.backgroundColor = "red";
+            
+            console.log("선언적함수 this", this);
+            console.log("선언적함수 event.currentTarget", event.currentTarget);
+
+        }
+    
+        btn[1].onclick = function (){
+            const text = btn[1].innerText;
+            document.body.style.backgroundColor = "yellow";
+            
+            console.log("익명함수 this", this);
+            console.log("익명함수 event.currentTarget", event.currentTarget);
+        }
+
+       btn[2].onclick= ()=>{
+         
+        const text = btn[2].innerText;
+        document.body.style.backgroundColor = text;
+        
+        console.log("화살표함수 this", this);
+        console.log("화살료함수 event.currentTarget", event.currentTarget);
+        }
+
+   
+
+
+
+    </script>
+
+</body>
+</html>
