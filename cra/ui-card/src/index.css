@@ -15,6 +15,7 @@
   height: 230px;
   object-fit: cover;
   margin-bottom: 40px;
+  cursor: pointer;
 }
 .card p {
   width: 340px;
@@ -35,3 +36,4 @@
   left: 100px;
   cursor: pointer;
 }
+
