@@ -1,16 +1,15 @@
-import pic01 from "./assets/pic01.jpg";
+//import pic01 from "./assets/pic01.jpg";
 
-function Card() {
+function Card(props) {
  
   return (
     <div className="card">
-      <h3>BORA BORA</h3>
-      <img src={pic01} alt="" />
+      <h3>{props.title}</h3>
+      <img src={props.img} alt="" />
       <p>
-        Lose yourself in a private island paradise, where the waters teem with
-        exotic fish and colorful coral.
+        {props.description}
       </p>    
-      <span>VIEW PROPERTY</span>
+      <span>{props.button}</span>
     </div>
   );
 }
