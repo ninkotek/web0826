@@ -1,3 +1,6 @@
+@charset "utf-8";
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css");
 @font-face {
     font-family: "NanumBarunGothic";
     src: url("https//fastly.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf");
@@ -16,20 +19,24 @@ img {
     object-fit: cover;
     vertical-align: top;
 }
+a {
+    text-decoration: none;
+    text-align: center;
+    line-height: 35px;
+}
 button {
     border: none;
     cursor: pointer;
 }
 
 #root {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
 }
 .card_list {
     width:230px;
-    height: 330px;
     margin: 60px;
 }
 .card_img {
@@ -80,14 +87,20 @@ button {
 .card_btn{
     margin-top:12px;
 }
-.card_btn button:first-of-type {
+.card_btn button {
     width: 70px;
     height: 35px;
     margin-right: 3px;
     border-radius: 3px;
     border: 1px solid #F3F3F3;
 }
-.card_btn button:last-of-type {
+.card_btn button::before {
+    content: "\f004";
+    font-family: "Font Awesome 5 Free";
+    margin-right: 8px;
+}
+.card_btn a {
+    display: inline-block;
     width: 155px;
     height: 35px;
     background: #503396;

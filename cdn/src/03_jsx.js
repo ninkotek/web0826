@@ -8,7 +8,8 @@
 
       1. {표현식}
         - 표현식이란? 변수, 속성, JS표현식(연산 등)
-        (1) 인라인 스타일
+        (1) 주석
+        (2) CSS 스타일 적용
             style={JS의객체}
             style={{속성: 값, 속성:값, ...}}
 
@@ -62,40 +63,42 @@ const container0 = document.querySelectorAll(".item").item(0);
 const root0 = ReactDOM.createRoot(container0);
 root0.render(myElement1);
 
-
 // 최상위 요소는 반드시 하나!!!
 // JS의 선언적 함수
 function myFunction() {
-  return (
-    <>
-      <h2>나는 함수 안의 JSX이다.</h2>
-      <p>JSX는 반드시 최상위 부모는 하나!</p>
-    </>
-  );
+    return (
+        <>
+            <h2>나는 함수 안의 JSX이다.</h2>
+            <p>JSX는 반드시 최상위 부모는 하나!</p>
+        </>
+    );
 }
 
 const container1 = document.querySelectorAll(".item").item(1);
 const root1 = ReactDOM.createRoot(container1);
+// JS의 함수는 호출하여 사용할 수 있으나, 가능한 리액트 컴포넌트를 사용한다.
 root1.render(myFunction());
 
 // 리액트의 함수형 컴포넌트
 function MyFunction() {
-  const styleObj = {
-    //객체 내부 css스타일 적용하기 -> 객체를 변수로 선언
-    // style=[js의 객체]
-    width: "100px", 
-    border: "1px solid red",
-    borderRadius: "5px"
-  }
-  return (
-    // 요기는 JS네 하하!
-    <React.Fragment>
-      {/* 요기가 드뎌 JSX 영역이구나!!! */}
-      <h2>나는 함수 안의 JSX이다.</h2>
-      <p>JSX는 반드시 최상위 부모는 하나!</p>
-      {/* class를 className으로 쓴다. */}
-      <p className="tomato">JSX는 반드시 최상위 부모는 하나!</p>
-      {/* 
+    // 내부 스타일 -> 객체를 변수로 선언
+    // 객체 참조는 객체.속성 또는 객체["속성"]
+    // 예) styleObj.width -> "100px"
+    // 예) styleObj.border -> "1px solid tomato"
+    const styleObj = {
+        width: "100px",
+        border: "5px solid tomato",
+        // borderRadius: "15px"
+    };
+    return (
+        // 요기는 JS네 하하!
+        <React.Fragment>
+            {/* 요기가 드뎌 JSX 영역이구나!!! */}
+            <h2>나는 함수 안의 JSX이다.</h2>
+            <p>JSX는 반드시 최상위 부모는 하나!</p>
+            {/* class를 className으로 쓴다. */}
+            <p className="tomato">JSX는 반드시 최상위 부모는 하나!</p>
+            {/* 
               1. 인라인 스타일
                 <태그명 style={{}}>
                   -> 바깥쪽 {}는 표현식 
@@ -108,24 +111,26 @@ function MyFunction() {
 
               2. 빈 요소는 />로 닫는다. 
             */}
-      <img
-      // 내부 스타일 방식으로 표현
-        style={styleObj}
-        src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png"
-        alt="리액트 로고"
-      />
-    </React.Fragment>
-  );
+            <img
+                style={{
+                    // 인라인 스타일
+                    borderRadius: "5px",
+                    // 내부 스타일
+                    width: styleObj.width,
+                    border: styleObj.border
+                }}
+                // style={{CSS속성}}
+                // 내부 스타일 방식으로만 표현
+                // style={styleObj}
+                src="https://images.velog.io/images/front/post/394731db-5b9d-42de-9b2f-2757c9b0b2c8/img.png"
+                alt="리액트 로고"
+            />
+        </React.Fragment>
+    );
 }
-
-
-// HTML DOM 요소 가져오기
-// js의 함수는 호출하여 사용할 수 있으나 가능한한 컴포넌트를 사용한다. 
-
-
-
 
 const container2 = document.querySelectorAll(".item").item(2);
 const root2 = ReactDOM.createRoot(container2);
-//컴포넌트 호출은 xml태그로 호출한다. 이때 태그의 이름은 컴포넌트이다. 
+// 컴포넌트는 XML 빈 요소로 호출한다.
+// 이때 태그의 이름은 컴포넌트 이름으로 한다.
 root2.render(<MyFunction />);
