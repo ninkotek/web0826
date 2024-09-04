@@ -1,0 +1,50 @@
+CRA (Create React Application)
+
+1. 명령 프롬프트 터미널(cmd): ctrl+`
+
+2. 작업 폴더로 이동
+web0826>cd cra
+web0826>cra>
+3. web0826>cra>npx create-react-app link-app
+ 샐 생성된 프로제그 폴더로 이동(web0826>cra>npx create-react-app link-app)
+4. web0826>cra>link-app> npm start -> 새로 생성된 앱 브라우저로 실행
+5. 프로젝트 폴더 구조 
+    (1) node_modules: react, react-dom, 등등 사용 할 라이브러리 저장
+    (2) public - index.html
+    (3) src -> index.js(렌더링), link.js(라우터)
+    (4) package.json
+6. React Router 추가 설치
+7. 새로운 컴포넌트 생성하기
+ (1) 컴포넌트의 첫 글자는 대문자
+ (2) src폴더에 Link.js
+ 8. 폴더 구조
+  (1) src 폴더>pages폴더>파일을 생성
+  (2)   - 링크 파일: Layout.js, 
+        - 페이지 파일: Home.js, Blogs.js, Contact.js
+        - 페이지 없음: NoPage.js
+    (3) src 폴더
+       - 라우터 설정: index.js
+
+  9. 라우터 구조
+    <BrowserRouter>
+        <Routes>
+            <Route path="링크경로" element="연결 출력할 컴포넌트"> -> 루트(root)
+                <Route /> -> 서브 연결
+            </Route>
+        </Routes>
+    </BrowserRouter>
+
+    10. 링크 구조
+    /는 최상위 root를 가리킨다.
+        <Link to="/경로">버튼명</Link>
+
+        <Outlet /> -> 컴포넌트 출력 담당
+
+    11. 라우터 종류
+    (1) 브라우저 라우터 <BrowserRouter> -> 빌드 후 새로고침시 에러 발생
+    (2) 해시 라우터: <HashRouter> 
+    -> #
+    -> SEO, 검색 기능 저하
+
+    12. 명령프롬프트 앱강제 종료: ctrl+c
+    13. 로컬 빌드(build) : npm run build
